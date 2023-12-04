@@ -105,7 +105,10 @@ void init_server(server_info_t *info)
         {
             client_thread_ids = realloc(client_thread_ids, (thread_idx + NODE_BACKLOG) * sizeof(pthread_t));
         }
+
+        pthread_join(client_thread_id, NULL);
     }
+
 }
 
 int main(int argc, char *argv[])
